@@ -1,0 +1,258 @@
+*,
+*:active {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #b6f2d5;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3a7275;
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+}
+
+.brand {
+  font-size: 2rem;
+  margin: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.navbar-links ul {
+  margin-top: 0.1rem;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style-type: none;
+  text-align: center;
+  height: 67px;
+}
+
+.navbar-links li a {
+  margin: 1rem;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s ease all;
+  font-size: 16px;
+}
+
+.navbar-links li a:hover {
+  font-size: 18px;
+  color: #78f6fa;
+  /* background-color: #095272; */
+}
+
+.navbar-links li .login-btn {
+  background-color: rgb(250, 229, 190);
+  min-width: 90px;
+  height: 45px;
+  color: orange;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.3);
+  margin: 0 1rem;
+  transition: 0.3s ease all;
+}
+
+.navbar-links li .getStarted-btn {
+  background-color: orange;
+  min-width: 90px;
+  height: 45px;
+  padding: 10px 20px;
+  color: rgb(253, 238, 208);
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.3);
+  margin: 0 1rem;
+  transition: 0.3s ease all;
+}
+
+.navbar-links li .getStarted-btn:active,
+.navbar-links li .login-btn:active {
+  box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+  animation: 0.7s pulse 1 forwards;
+}
+
+.navbar-links li button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-btn_burger {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+}
+
+footer{
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+footer p {
+  text-align: center;
+  font-size: 18px;
+  color: #121212;
+  font-weight: 600;
+  font-family: sans-serif;
+  word-spacing: 2.4px;
+  letter-spacing: 2.1px;
+}
+
+footer p a{
+  color: #3a7275;
+}
+
+footer p span{
+  color: crimson;
+}
+@media screen and (max-width: 996px) {
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .menu-btn_burger {
+    margin-top: 10px;
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-links li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.change {
+    display: block;
+  }
+
+  .menu-btn_burger::before,
+  .menu-btn_burger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-btn_burger::before {
+    transform: translateY(-16px);
+  }
+  .menu-btn_burger::after {
+    transform: translateY(16px);
+  }
+
+  .menu-btn_burger.open {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menu-btn_burger.open::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  .menu-btn_burger.open::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+
+  .menu-bg {
+    width: 0;
+    height: 0;
+    z-index: 1;
+    background: radial-gradient(#638385, #638385, #638385);
+    transition: 0.3s ease;
+  }
+
+  .change-bg {
+    width: 40%;
+    height: 100vh;
+    opacity: 0.9;
+  }
+
+  .menu-bg,
+  .navbar {
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  .navbar-links.change {
+    margin-top: 7rem;
+  }
+
+  .navbar-links li .login-btn,
+  .navbar-links li .getStarted-btn {
+    width: 80%;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .change-bg {
+    width: 100%;
+    height: 800px;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(0.95, 0.95, 0.95);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
